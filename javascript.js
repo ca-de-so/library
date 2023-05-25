@@ -17,3 +17,7 @@ function addBookToLibrary() {
 }
 
 addBookToLibrary();
+
+function displayBooks() {
+  myLibrary.forEach((book) => console.log(book.title));
+}
