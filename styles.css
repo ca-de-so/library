@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+.navbar {
+  display: flex;
+  margin-top: 48px;
+}
+
+.logo {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  width: 426px;
+  height: 44px;
+  font-size: 2rem;
+  font-weight: light;
+  font-style: italic;
+  font-family: "Inter", sans-serif;
+  border-radius: 29px;
+  border: solid 2px black;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
