@@ -34,3 +34,16 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 80px;
+}
+
+.card {
+  width: 252.01px;
+  height: 356px;
+  border-radius: 24.4px;
+  background-color: rgba(181, 183, 187, 31%);
+}
