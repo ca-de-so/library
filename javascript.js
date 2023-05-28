@@ -40,3 +40,15 @@ function displayBooks(book) {
   card.classList.add("card");
   cardContainer.appendChild(card);
 }
+
+const dialog = document.querySelector("dialog");
+const formSubmitButton = document.querySelector("button");
+
+const addBookButton = document.querySelector(".add-book");
+addBookButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+formSubmitButton.addEventListener("click", () => {
+  dialog.close();
+});
