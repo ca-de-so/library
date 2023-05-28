@@ -35,6 +35,12 @@ html {
   margin-right: auto;
 }
 
+.add-book {
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  margin-right: auto;
+}
+
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -46,4 +52,9 @@ html {
   height: 356px;
   border-radius: 24.4px;
   background-color: rgba(181, 183, 187, 31%);
+}
+
+.book-cover {
+  width: 138.3px;
+  height: 202.7px;
 }
