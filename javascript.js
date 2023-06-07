@@ -62,6 +62,10 @@ formSubmitButton.addEventListener("click", () => {
   );
 
   dialog.close();
-});
 
-//submitting form will push the contents to array
+  for (let i = 0; i < myLibrary.length; i++) {
+    if (i == myLibrary.length - 1) {
+      displayBooks(myLibrary[i]);
+    }
+  }
+});
