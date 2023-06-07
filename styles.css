@@ -58,3 +58,17 @@ html {
   width: 138.3px;
   height: 202.7px;
 }
+
+dialog > form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+form input {
+  width: 250px;
+  height: 30px;
+}
