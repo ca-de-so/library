@@ -16,11 +16,11 @@ let myLibrary = [
   { title: "Adventures of Zelda", author: "Zelda Brown", pages: "4231", read: "NO" },
 ];
 
-function addBookToLibrary() {
-  const title = prompt("Enter the Title of the book");
-  const author = prompt("Enter the name of the author");
-  const pages = prompt("Enter the total number of pages in the book");
-  const read = prompt("Have you read the book? Type 'YES' if yes and 'NO' if not");
+function addBookToLibrary(title, author, pages, read) {
+  // const title = prompt("Enter the Title of the book");
+  // const author = prompt("Enter the name of the author");
+  // const pages = prompt("Enter the total number of pages in the book");
+  // const read = prompt("Have you read the book? Type 'YES' if yes and 'NO' if not");
   const book = new Book(title, author, pages, read);
   myLibrary.push(book);
 }
@@ -50,5 +50,18 @@ addBookButton.addEventListener("click", () => {
 });
 
 formSubmitButton.addEventListener("click", () => {
+  const bookName = document.getElementById("book-name");
+  const bookAuthor = document.getElementById("book-author");
+  const noOfPagesInBook = document.getElementById("number-of-pages-in-book");
+  const read = document.getElementById("read");
+  addBookToLibrary(
+    bookName.value,
+    bookAuthor.value,
+    noOfPagesInBook.value,
+    read.value
+  );
+
   dialog.close();
 });
+
+//submitting form will push the contents to array
