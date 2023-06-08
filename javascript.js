@@ -37,6 +37,10 @@ myLibrary.forEach((book) => displayBooks(book));
 function displayBooks(book) {
   const card = document.createElement("div");
   card.textContent = book.title;
+  const closeButton = document.createElement("img");
+  closeButton.setAttribute("src", "./images/x.svg");
+  closeButton.classList.add("close-button");
+  card.appendChild(closeButton);
   card.classList.add("card");
   cardContainer.appendChild(card);
 }
