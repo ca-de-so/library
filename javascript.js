@@ -36,12 +36,30 @@ myLibrary.forEach((book) => displayBooks(book));
 
 function displayBooks(book) {
   const card = document.createElement("div");
-  card.textContent = book.title;
+  card.classList.add("card");
+
   const closeButton = document.createElement("img");
   closeButton.setAttribute("src", "./images/x.svg");
   closeButton.classList.add("close-button");
+
+  const bookName = document.createElement("div");
+  bookName.textContent = `Title: ${book.title}`;
+
+  const bookAuthor = document.createElement("div");
+  bookAuthor.textContent = `Author: ${book.author}`;
+
+  const noOfPagesInBook = document.createElement("div");
+  noOfPagesInBook.textContent = `No. of pages: ${book.pages}`;
+
+  const read = document.createElement("div");
+  read.textContent = `Read?: ${book.read}`;
+
   card.appendChild(closeButton);
-  card.classList.add("card");
+  card.appendChild(bookName);
+  card.appendChild(bookAuthor);
+  card.appendChild(noOfPagesInBook);
+  card.appendChild(read);
+
   cardContainer.appendChild(card);
 }
 
