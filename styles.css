@@ -45,13 +45,19 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 80px;
+  gap: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1082px;
 }
 
 .card {
-  width: 252.01px;
-  height: 356px;
+  /* width: 252.01px; */
+  /* height: 356px; */
+  height: 336.99px;
   border-radius: 24.4px;
   background-color: rgba(181, 183, 187, 31%);
+  /* outline: solid 5px purple; */
 }
 
 .book-cover {
