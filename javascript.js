@@ -32,11 +32,12 @@ const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
 body.appendChild(cardContainer);
 
-myLibrary.forEach((book) => displayBooks(book));
+myLibrary.forEach((book, index) => displayBooks(book, index));
 
-function displayBooks(book) {
+function displayBooks(book, index) {
   const card = document.createElement("div");
   card.classList.add("card");
+  card.setAttribute("data-index", index);
 
   const closeButton = document.createElement("img");
   closeButton.setAttribute("src", "./images/x.svg");
@@ -90,13 +91,19 @@ formSubmitButton.addEventListener("click", () => {
 
   for (let i = 0; i < myLibrary.length; i++) {
     if (i == myLibrary.length - 1) {
-      displayBooks(myLibrary[i]);
+      displayBooks(myLibrary[i], i);
     }
   }
 });
 
-const closeButton = document.querySelector(".close-button");
-closeButton.addEventListener("click", () => {
-  //update the array
-  //display the books from array
+const closeButton = document.querySelectorAll(".close-button");
+
+const cards = document.querySelectorAll(".card");
+cards.forEach((card) => {
+  card.addEventListener("click", (e) => {
+    // e.target.style.backgroundColor = "red";
+    // e.currentTarget.style.backgroundColor = "purple";
+    let index = e.currentTarget.getAttribute("data-index");
+    myLibrary.splice(index, 1);
+  });
 });
