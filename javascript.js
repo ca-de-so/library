@@ -94,3 +94,9 @@ formSubmitButton.addEventListener("click", () => {
     }
   }
 });
+
+const closeButton = document.querySelector(".close-button");
+closeButton.addEventListener("click", () => {
+  //update the array
+  //display the books from array
+});
