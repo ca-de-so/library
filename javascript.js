@@ -54,11 +54,14 @@ function displayBooks(book) {
   const read = document.createElement("div");
   read.textContent = `Read?: ${book.read}`;
 
+  const cardContentDiv = document.createElement("div");
+
+  cardContentDiv.appendChild(bookName);
+  cardContentDiv.appendChild(bookAuthor);
+  cardContentDiv.appendChild(noOfPagesInBook);
+  cardContentDiv.appendChild(read);
   card.appendChild(closeButton);
-  card.appendChild(bookName);
-  card.appendChild(bookAuthor);
-  card.appendChild(noOfPagesInBook);
-  card.appendChild(read);
+  card.appendChild(cardContentDiv);
 
   cardContainer.appendChild(card);
 }
