@@ -58,6 +58,9 @@ html {
   border-radius: 24.4px;
   background-color: rgba(181, 183, 187, 31%);
   /* outline: solid 5px purple; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .book-cover {
@@ -77,4 +80,10 @@ dialog > form {
 form input {
   width: 250px;
   height: 30px;
+}
+
+.close-button {
+  /* margin-left: auto; */
+  margin-right: 20px;
+  align-self: flex-end;
 }
