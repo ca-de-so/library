@@ -96,14 +96,14 @@ formSubmitButton.addEventListener("click", () => {
   }
 });
 
-const closeButton = document.querySelectorAll(".close-button");
+const closeButtons = document.querySelectorAll(".close-button");
 
-const cards = document.querySelectorAll(".card");
-cards.forEach((card) => {
-  card.addEventListener("click", (e) => {
-    // e.target.style.backgroundColor = "red";
-    // e.currentTarget.style.backgroundColor = "purple";
-    let index = e.currentTarget.getAttribute("data-index");
+closeButtons.forEach((closeButton, index) => {
+  closeButton.addEventListener("click", (e) => {
+    const cards = document.querySelectorAll(".card");
+    e.target.style.backgroundColor = "red";
     myLibrary.splice(index, 1);
+    cardContainer.removeChild(cards[index]);
+    // myLibrary.forEach((book, i) => displayBooks(book, i));
   });
 });
