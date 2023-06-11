@@ -65,6 +65,18 @@ function displayBooks(book, index) {
   card.appendChild(cardContentDiv);
 
   cardContainer.appendChild(card);
+
+  const closeButtons = document.querySelectorAll(".close-button");
+
+  closeButtons.forEach((closeButton, index) => {
+    closeButton.addEventListener("click", (e) => {
+      const cards = document.querySelectorAll(".card");
+      e.target.style.backgroundColor = "red";
+      myLibrary.splice(index, 1);
+      cardContainer.removeChild(cards[index]);
+      // myLibrary.forEach((book, i) => displayBooks(book, i));
+    });
+  });
 }
 
 const dialog = document.querySelector("dialog");
