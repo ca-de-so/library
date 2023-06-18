@@ -25,8 +25,6 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(book);
 }
 
-//addBookToLibrary();
-
 const body = document.querySelector("body");
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
@@ -65,19 +63,10 @@ function displayBooks(book, index) {
   card.appendChild(cardContentDiv);
 
   cardContainer.appendChild(card);
-
-  const closeButtons = document.querySelectorAll(".close-button");
-
-  closeButtons.forEach((closeButton, index) => {
-    closeButton.addEventListener("click", (e) => {
-      const cards = document.querySelectorAll(".card");
-      e.target.style.backgroundColor = "red";
-      myLibrary.splice(index, 1);
-      cardContainer.removeChild(cards[index]);
-      // myLibrary.forEach((book, i) => displayBooks(book, i));
-    });
-  });
+  // console.log(`appended book named: ${book.title}`);
 }
+
+addEventListenerToBooks();
 
 const dialog = document.querySelector("dialog");
 const formSubmitButton = document.querySelector("button");
@@ -104,6 +93,63 @@ formSubmitButton.addEventListener("click", () => {
   for (let i = 0; i < myLibrary.length; i++) {
     if (i == myLibrary.length - 1) {
       displayBooks(myLibrary[i], i);
+      // console.log(myLibrary[i]);
+      // console.log(i);
     }
   }
+
+  removeEventListenerFromBooks();
+  addEventListenerToBooks();
+  // console.log(`added event listener to ${bookName.value}`);
 });
+
+function addEventListenerToBooks() {
+  const closeButtons = document.getElementsByClassName("close-button");
+  for (let i = 0; i < closeButtons.length; i++) {
+    closeButtons[i].index = i;
+    closeButtons[i].addEventListener("click", removeBook);
+  }
+}
+
+// 3 and 4th item removing from array but only removing 3rd from display , so next added item's data index is previous index + 1 ( in this case 3)
+
+function removeEventListenerFromBooks() {
+  const closeButtons = document.getElementsByClassName("close-button");
+  for (let i = 0; i < closeButtons.length; i++) {
+    // closeButtons[i].index = i;
+    if (i != closeButtons.length - 1) {
+      closeButtons[i].removeEventListener("click", removeBook);
+    } else {
+      break;
+    }
+  }
+}
+
+function removeBook(e) {
+  const closeButtons = document.getElementsByClassName("close-button");
+  console.log("hi");
+  // console.log(++count);
+  let cardRemoved = false;
+  //e.target.style.backgroundColor = "red";
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    if (card.getAttribute("data-index") == e.target.index) {
+      myLibrary.splice(e.target.index, 1);
+      cardContainer.removeChild(card);
+      cardRemoved = true;
+    }
+  });
+
+  if (cardRemoved) {
+    for (let j = e.target.index; j < cards.length - 1; j++) {
+      cards[j + 1].setAttribute("data-index", j);
+    }
+
+    for (let k = e.target.index; k < closeButtons.length; k++) {
+      closeButtons[k].index = k;
+      console.log(closeButtons[k]);
+      console.log(`index is ${k}`);
+    }
+  }
+}
