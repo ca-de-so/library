@@ -6,14 +6,14 @@ function Book(title, author, pages, read) {
 }
 
 let myLibrary = [
-  { title: "Harry Potter", author: "Abc author", pages: "1245", read: "YES" },
+  { title: "Harry Potter", author: "Abc author", pages: "1245", read: "Yes" },
   {
     title: "The fault in our stars",
     author: "John Green",
     pages: "4532",
-    read: "NO",
+    read: "No",
   },
-  { title: "Adventures of Zelda", author: "Zelda Brown", pages: "4231", read: "NO" },
+  { title: "Adventures of Zelda", author: "Zelda Brown", pages: "4231", read: "No" },
 ];
 
 function addBookToLibrary(title, author, pages, read) {
@@ -92,6 +92,15 @@ formSubmitButton.addEventListener("click", () => {
   const bookAuthor = document.getElementById("book-author");
   const noOfPagesInBook = document.getElementById("number-of-pages-in-book");
   const read = document.getElementById("read");
+
+  if (read.checked) {
+    // console.log("checked");
+    read.value = "Yes";
+  } else {
+    // console.log("unchecked");
+    read.value = "No";
+  }
+
   addBookToLibrary(
     bookName.value,
     bookAuthor.value,
@@ -191,13 +200,13 @@ function toggleRead(e) {
 
   cards.forEach((card) => {
     if (card.getAttribute("data-index") == e.target.index) {
-      if (myLibrary[e.target.index].read == "NO") {
-        myLibrary[e.target.index].read = "YES";
-        Read[e.target.index].textContent = "YES";
+      if (myLibrary[e.target.index].read == "No") {
+        myLibrary[e.target.index].read = "Yes";
+        Read[e.target.index].textContent = "Yes";
       } else {
         {
-          myLibrary[e.target.index].read = "NO";
-          Read[e.target.index].textContent = "NO";
+          myLibrary[e.target.index].read = "No";
+          Read[e.target.index].textContent = "No";
         }
       }
     }
