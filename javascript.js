@@ -55,12 +55,17 @@ function displayBooks(book, index) {
 
   const cardContentDiv = document.createElement("div");
 
+  const toggleReadStatus = document.createElement("div");
+  toggleReadStatus.classList.add("toggle-read");
+  toggleReadStatus.textContent = "Toggle Read Status";
+
   cardContentDiv.appendChild(bookName);
   cardContentDiv.appendChild(bookAuthor);
   cardContentDiv.appendChild(noOfPagesInBook);
   cardContentDiv.appendChild(read);
   card.appendChild(closeButton);
   card.appendChild(cardContentDiv);
+  card.appendChild(toggleReadStatus);
 
   cardContainer.appendChild(card);
   // console.log(`appended book named: ${book.title}`);
