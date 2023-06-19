@@ -130,10 +130,13 @@ function addEventListenerToBooks() {
 
 function removeEventListenerFromBooks() {
   const closeButtons = document.getElementsByClassName("close-button");
-  for (let i = 0; i < closeButtons.length; i++) {
+  const toggleReadButtons = document.getElementsByClassName("toggle-read");
+
+  for (let i = 0; i < closeButtons.length || i < toggleReadButtons.length; i++) {
     // closeButtons[i].index = i;
-    if (i != closeButtons.length - 1) {
+    if (i != closeButtons.length - 1 || i != toggleReadButtons.length) {
       closeButtons[i].removeEventListener("click", removeBook);
+      toggleReadButtons[i].removeEventListener("click", toggleRead);
     } else {
       break;
     }
