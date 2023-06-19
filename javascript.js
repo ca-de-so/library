@@ -51,6 +51,7 @@ function displayBooks(book, index) {
   noOfPagesInBook.textContent = `No. of pages: ${book.pages}`;
 
   const read = document.createElement("div");
+  read.classList.add("read-status");
   read.textContent = `Read?: ${book.read}`;
 
   const closeButtonAndCardContentDiv = document.createElement("div");
@@ -170,4 +171,24 @@ function removeBook(e) {
       console.log(`index is ${k}`);
     }
   }
+}
+
+function toggleRead(e) {
+  const Read = document.getElementsByClassName("read-status");
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    if (card.getAttribute("data-index") == e.target.index) {
+      if (myLibrary[e.target.index].read == "NO") {
+        myLibrary[e.target.index].read = "YES";
+        Read[e.target.index].textContent = "YES";
+      } else {
+        {
+          myLibrary[e.target.index].read = "NO";
+          Read[e.target.index].textContent = "NO";
+        }
+      }
+    }
+  });
 }
