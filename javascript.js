@@ -115,9 +115,14 @@ formSubmitButton.addEventListener("click", () => {
 
 function addEventListenerToBooks() {
   const closeButtons = document.getElementsByClassName("close-button");
-  for (let i = 0; i < closeButtons.length; i++) {
+  const toggleReadButtons = document.getElementsByClassName("toggle-read");
+
+  for (let i = 0; i < closeButtons.length || i < toggleReadButtons.length; i++) {
     closeButtons[i].index = i;
     closeButtons[i].addEventListener("click", removeBook);
+
+    toggleReadButtons[i].index = i;
+    toggleReadButtons[i].addEventListener("click", toggleRead);
   }
 }
 
