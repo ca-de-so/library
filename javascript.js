@@ -53,6 +53,8 @@ function displayBooks(book, index) {
   const read = document.createElement("div");
   read.textContent = `Read?: ${book.read}`;
 
+  const closeButtonAndCardContentDiv = document.createElement("div");
+
   const cardContentDiv = document.createElement("div");
 
   const toggleReadStatus = document.createElement("div");
@@ -63,8 +65,11 @@ function displayBooks(book, index) {
   cardContentDiv.appendChild(bookAuthor);
   cardContentDiv.appendChild(noOfPagesInBook);
   cardContentDiv.appendChild(read);
-  card.appendChild(closeButton);
-  card.appendChild(cardContentDiv);
+
+  closeButtonAndCardContentDiv.appendChild(closeButton);
+  closeButtonAndCardContentDiv.appendChild(cardContentDiv);
+
+  card.appendChild(closeButtonAndCardContentDiv);
   card.appendChild(toggleReadStatus);
 
   cardContainer.appendChild(card);
