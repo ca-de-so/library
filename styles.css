@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -44,6 +46,7 @@ html {
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
   margin-top: 80px;
   gap: 50px;
   margin-left: auto;
@@ -54,7 +57,7 @@ html {
 .card {
   /* width: 252.01px; */
   /* height: 356px; */
-  height: 336.99px;
+  min-height: 275.99px;
   border-radius: 24.4px;
   background-color: rgba(181, 183, 187, 31%);
   /* outline: solid 5px purple; */
@@ -109,8 +112,21 @@ form input {
   margin-bottom: 10px;
 }
 
-.card div:first-child {
+.card > div:first-child {
   /* outline: solid 2px red; */
   display: flex;
   flex-direction: column;
+  gap: 11px;
+}
+
+.card-content-container > div {
+  /* outline: solid 2px red; */
+  display: flex;
+  gap: 3px;
+}
+
+.card-content-container > div span:first-child {
+  /* outline: solid 2px red; */
+  font-weight: 500;
+  font-style: normal;
 }
