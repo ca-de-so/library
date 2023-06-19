@@ -41,31 +41,66 @@ function displayBooks(book, index) {
   closeButton.setAttribute("src", "./images/x.svg");
   closeButton.classList.add("close-button");
 
+  const bookNameDiv = document.createElement("div");
+  const bookNameLabel = document.createElement("span");
+  bookNameLabel.textContent = "Title:";
   const bookName = document.createElement("div");
-  bookName.textContent = `Title: ${book.title}`;
+  bookName.textContent = ` ${book.title}`;
 
+  const bookAuthorDiv = document.createElement("div");
+  const bookAuthorLabel = document.createElement("span");
+  bookAuthorLabel.textContent = "Author:";
   const bookAuthor = document.createElement("div");
-  bookAuthor.textContent = `Author: ${book.author}`;
+  bookAuthor.textContent = ` ${book.author}`;
 
+  const noOfPagesInBookDiv = document.createElement("div");
+  const noOfPagesInBookLabel = document.createElement("span");
+  noOfPagesInBookLabel.textContent = "No. of pages:";
   const noOfPagesInBook = document.createElement("div");
-  noOfPagesInBook.textContent = `No. of pages: ${book.pages}`;
+  noOfPagesInBook.textContent = ` ${book.pages}`;
 
+  const readDiv = document.createElement("div");
+  const readLabel = document.createElement("span");
+  readLabel.textContent = "Read?:";
   const read = document.createElement("div");
   read.classList.add("read-status");
-  read.textContent = `Read?: ${book.read}`;
+  read.textContent = ` ${book.read}`;
+
+  // const bookAuthor = document.createElement("div");
+  // bookAuthor.textContent = `Author: ${book.author}`;
+
+  // const noOfPagesInBook = document.createElement("div");
+  // noOfPagesInBook.textContent = `No. of pages: ${book.pages}`;
+
+  // const read = document.createElement("div");
+  // read.classList.add("read-status");
+  // read.textContent = `Read?: ${book.read}`;
 
   const closeButtonAndCardContentDiv = document.createElement("div");
 
   const cardContentDiv = document.createElement("div");
+  cardContentDiv.classList.add("card-content-container");
 
   const toggleReadStatus = document.createElement("div");
   toggleReadStatus.classList.add("toggle-read");
   toggleReadStatus.textContent = "Toggle Read Status";
 
-  cardContentDiv.appendChild(bookName);
-  cardContentDiv.appendChild(bookAuthor);
-  cardContentDiv.appendChild(noOfPagesInBook);
-  cardContentDiv.appendChild(read);
+  bookNameDiv.appendChild(bookNameLabel);
+  bookNameDiv.appendChild(bookName);
+
+  bookAuthorDiv.appendChild(bookAuthorLabel);
+  bookAuthorDiv.appendChild(bookAuthor);
+
+  noOfPagesInBookDiv.appendChild(noOfPagesInBookLabel);
+  noOfPagesInBookDiv.appendChild(noOfPagesInBook);
+
+  readDiv.appendChild(readLabel);
+  readDiv.appendChild(read);
+
+  cardContentDiv.appendChild(bookNameDiv);
+  cardContentDiv.appendChild(bookAuthorDiv);
+  cardContentDiv.appendChild(noOfPagesInBookDiv);
+  cardContentDiv.appendChild(readDiv);
 
   closeButtonAndCardContentDiv.appendChild(closeButton);
   closeButtonAndCardContentDiv.appendChild(cardContentDiv);
