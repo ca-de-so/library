@@ -6,14 +6,19 @@ function Book(title, author, pages, read) {
 }
 
 let myLibrary = [
-  { title: "Harry Potter", author: "Abc author", pages: "1245", read: "Yes" },
+  { title: "The Alchemist", author: "Paulo Coelho", pages: "172", read: "Yes" },
   {
-    title: "The fault in our stars",
-    author: "John Green",
-    pages: "4532",
+    title: "Atomic Habits",
+    author: "James Clear",
+    pages: "320",
     read: "No",
   },
-  { title: "Adventures of Zelda", author: "Zelda Brown", pages: "4231", read: "No" },
+  {
+    title: "The Girl Who Drank the Moon",
+    author: "Kelly Barnhill",
+    pages: "416",
+    read: "No",
+  },
 ];
 
 function addBookToLibrary(title, author, pages, read) {
