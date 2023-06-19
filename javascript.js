@@ -146,6 +146,8 @@ function removeEventListenerFromBooks() {
 
 function removeBook(e) {
   const closeButtons = document.getElementsByClassName("close-button");
+  const toggleReadButtons = document.getElementsByClassName("toggle-read");
+
   console.log("hi");
   // console.log(++count);
   let cardRemoved = false;
@@ -165,10 +167,19 @@ function removeBook(e) {
       cards[j + 1].setAttribute("data-index", j);
     }
 
-    for (let k = e.target.index; k < closeButtons.length; k++) {
+    for (
+      let k = e.target.index;
+      k < closeButtons.length || k < toggleReadButtons.length;
+      k++
+    ) {
       closeButtons[k].index = k;
+      toggleReadButtons[k].index = k;
+
       console.log(closeButtons[k]);
-      console.log(`index is ${k}`);
+      console.log(`index is ${closeButtons[k].index}}`);
+
+      console.log(toggleReadButtons[k]);
+      console.log(`index is ${toggleReadButtons[k].index}`);
     }
   }
 }
