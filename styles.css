@@ -50,6 +50,7 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
   grid-auto-rows: 1fr;
   margin-top: 80px;
+  margin-bottom: 80px;
   /* gap: 50px; */
   gap: 50px;
   margin-left: auto;
@@ -191,5 +192,6 @@ input#read {
 
   .card-container {
     margin-top: 42px;
+    margin-bottom: 42px;
   }
 }
