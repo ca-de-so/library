@@ -87,8 +87,37 @@ dialog > form {
   font-weight: bold;
 }
 
+dialog {
+  border-radius: 24.4px;
+}
+
 form input {
   width: 250px;
+  /* height: 30px; */
+  border-radius: 13.39px;
+  font-size: 19px;
+  font-style: italic;
+  padding: 8px 7px;
+}
+
+form button {
+  background-color: #382110;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 8px 0px;
+  border-radius: 13.39px;
+}
+
+form .form-element:last-of-type label {
+  /* outline: solid 2px purple; */
+  display: flex;
+  align-items: center;
+}
+
+input#read {
+  width: 30px;
   height: 30px;
 }
 
