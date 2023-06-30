@@ -30,10 +30,10 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(book);
 }
 
-const body = document.querySelector("body");
+const webpageContainer = document.querySelector(".webpage-container");
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
-body.appendChild(cardContainer);
+webpageContainer.appendChild(cardContainer);
 
 myLibrary.forEach((book, index) => displayBooks(book, index));
 
@@ -127,7 +127,8 @@ addBookButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
-formSubmitButton.addEventListener("click", () => {
+formSubmitButton.addEventListener("click", (e) => {
+  e.preventDefault();
   const bookName = document.getElementById("book-name");
   const bookAuthor = document.getElementById("book-author");
   const noOfPagesInBook = document.getElementById("number-of-pages-in-book");
