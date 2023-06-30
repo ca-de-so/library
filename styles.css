@@ -11,14 +11,15 @@ html {
 .navbar {
   display: flex;
   margin-top: 48px;
+  justify-content: space-between;
 }
 
 .logo {
   font-size: 3.5rem;
   font-weight: bold;
   font-family: "Inter", sans-serif;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto; */
+  margin-right: 20px;
 }
 
 .search-bar {
@@ -40,18 +41,22 @@ html {
 .add-book {
   font-size: 2rem;
   font-family: "Inter", sans-serif;
-  margin-right: auto;
+  margin-left: 20px;
 }
 
 .card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
   grid-auto-rows: 1fr;
   margin-top: 80px;
+  /* gap: 50px; */
   gap: 50px;
   margin-left: auto;
   margin-right: auto;
-  width: 1082px;
+  /* width: 1082px; */
+  width: 100%;
+  /* outline: solid 5px purple; */
 }
 
 .card {
@@ -129,4 +134,33 @@ form input {
   /* outline: solid 2px red; */
   font-weight: 500;
   font-style: normal;
+}
+
+.webpage-container {
+  width: 90%;
+  /* outline: solid 2px red; */
+  margin: 0 auto;
+}
+
+@media (max-width: 657px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    width: 90%;
+    margin-bottom: 28px;
+  }
+
+  .logo {
+    margin-bottom: 55px;
+  }
+
+  .add-book {
+    align-self: flex-end;
+  }
+
+  .card-container {
+    margin-top: 42px;
+  }
 }
