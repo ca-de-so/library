@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="box-border">
+  <head>
+    <link rel="stylesheet" href="output.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="javascript.js" defer></script>
+    <title>myLibrary</title>
+    <link rel="icon" type="image/png" href="../images/favicon-1.png" />
+  </head>
+  <body class="box-border">
+    <div class="webpage-container w-5/6 mx-auto my-0">
+      <div class="navbar flex mt-[48px] justify-between items-center sm:flex-col">
+        <div class="logo text-5xl font-bold mr-[20px] font-Inter sm:mb-[40px] sm:self-start sm:mt-[10px]">myLibrary</div>
+        <input
+          class="search-bar h-[44px] text-3xl italic font-Inter rounded-[29px] text-center pt-4 pb-4 ml-auto mr-auto w-[426px] border-solid border-black border-2 sm:w-full sm:mb-[28px]" 
+          placeholder="Search for books in your library"
+        />
+        <div class="add-book text-3xl ml-[20px] font-Inter leading-tight sm:self-end">+ Add Book</div>
+      </div>
+      <dialog class="rounded-[24.4px] px-[10px] py-[10px] border-solid border-black border-[3px]">
+        <form class="flex flex-col text-3xl font-bold gap-[15px] font-Inter">
+          <div class="form-element">
+            <label for="book-name"
+              >Book Name:
+              <input id="book-name" type="text" class="w-[250px] rounded-[13.39px] text-3xl italic px-[8px] py-[4px] border-solid border-black border-2 font-normal sm:w-full" required
+            /></label>
+          </div>
+          <div class="form-element">
+            <label for="book-author"
+              >Author Name:
+              <input id="book-author" type="text" class="w-[250px] rounded-[13.39px] text-3xl italic px-[8px] py-[4px]  border-solid border-black border-2 font-normal sm:w-full" required
+            /></label>
+          </div>
+          <div class="form-element">
+            <label for="number-of-pages-in-book"
+              >No. of pages in book:
+              <input
+                id="number-of-pages-in-book"
+                type="text"
+                class="w-[250px] rounded-[13.39px] text-3xl italic px-[8px] py-[4px] border-solid border-black border-2 font-normal sm:w-full" required
+            /></label>
+          </div>
+          <div class="form-element">
+            <label for="read"  class="flex items-center gap-[4px]"
+              >Read:
+              <input
+                id="read"
+                type="checkbox"
+                name="read"
+                value="Yes"
+                class="w-[30px] h-[30px] "
+            /></label>
+          </div>
+          <button type="submit" class="bg-[#382110] text-white text-3xl font-semibold px-[8px] py-[4px] rounded-[14.39px] font-Inter">
+            Submit
+          </button>
+        </form>
+      </dialog>
+    </div>
+  </body>
+</html>
