@@ -68,7 +68,7 @@ function displayBooks(book, index) {
   card.setAttribute("data-index", index);
 
   const closeButton = document.createElement("img");
-  closeButton.setAttribute("src", "./images/x.svg");
+  closeButton.setAttribute("src", "images/x.svg");
   closeButton.classList.add("close-button","self-end");
 
   const bookNameDiv = document.createElement("div");
