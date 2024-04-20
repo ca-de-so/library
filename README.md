@@ -1,5 +1,5 @@
 # library
 
-Github repo : https://github.com/tangerine003/library
+Github repo : https://github.com/ca-de-so/library
 
-Live project : https://tangerine003.github.io/library/
+Live project : https://ca-de-so.github.io/library/
